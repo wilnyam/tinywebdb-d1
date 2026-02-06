@@ -1,0 +1,15 @@
+# Cloudflare Workers configuration for TinyWebDB with D1
+# See: https://developers.cloudflare.com/workers/wrangler/configuration/
+
+name = "tinywebdb-d1"
+main = "src/index.ts"
+compatibility_date = "2025-10-22"
+
+# D1 Database binding
+# Create database: wrangler d1 create tinywebdb-d1
+# Then replace YOUR_D1_DATABASE_ID below with the database_id from the output
+# Initialize schema: wrangler d1 execute tinywebdb-d1 --file=./src/schema.sql
+[[d1_databases]]
+binding = "TINYWEBDB_D1"
+database_name = "tinywebdb-d1"
+database_id = "445ee904-9809-4b02-9d85-bbc0ca4d7caa"
